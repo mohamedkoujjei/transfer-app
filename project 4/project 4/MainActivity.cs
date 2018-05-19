@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+using System.Data;
+using MySql.Data.MySqlClient;
 using Android.App;
 using Android.Widget;
 using Android.OS;
