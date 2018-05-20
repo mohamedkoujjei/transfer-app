@@ -32,7 +32,7 @@ namespace project_4
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
-        }3
+        }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
