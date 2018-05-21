@@ -14,6 +14,15 @@ namespace project_4
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity
 	{
+        private static MainActivity _instance;
+        private readonly MySqlConnection _connrction;
+
+        private const string Server = "localhost";
+        private const string Database = "project4";
+        private const string User = "root";
+        private const string Password = "admin";
+
+
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
