@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+using System.Data;
+using MySql.Data.MySqlClient;
 using Android.App;
 using Android.Widget;
 using Android.OS;
@@ -11,6 +14,34 @@ namespace project_4
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity
 	{
+        #DATABASE
+        private static MainActivity _instance;
+        private readonly MySqlConnection _connection;
+
+        private const string Server = "localhost";
+        private const string Database = "project4";
+        private const string User = "root";
+        private const string Password = "admin";
+
+        public static MainActivity Get();
+
+        private MainActivity()
+        {
+            StringBuilder connectionString = new StringBuilder();
+            connectionString.Append("SERVER=" + Server + ";");
+            connectionString.Append("DATABASE=" + Database + ";");
+            connectionString.Append("UID=" + User + ";");
+            connectionString.Append("PASSWORD=" + Password + ";");
+
+            _connection = new MySqlConnection(connectionString.ToString());
+        }
+
+        public void OpenConnection();
+
+        public void CloseConnection();
+
+        public MySqlConnection GetConnection();
+  
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
