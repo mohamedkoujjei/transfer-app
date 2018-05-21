@@ -14,7 +14,6 @@ namespace project_4
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity
 	{
-        #DATABAS
         private static MainActivity _instance;
         private readonly MySqlConnection _connection;
 
